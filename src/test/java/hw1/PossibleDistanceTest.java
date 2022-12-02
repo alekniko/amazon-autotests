@@ -27,10 +27,20 @@ public class PossibleDistanceTest {
 
         Calculations calc = new Calculations();
 
-        String calcResultForCar = calc.calculatePossibilityToFinishTrip(volvoCar.getTankVolume(), volvoCar.getFuelConsumption(), routeA.getDistance(), volvoCar.getTransportType());
-        String calcResultForAirbus = calc.calculatePossibilityToFinishTrip(airBus.getTankVolume(), airBus.getFuelConsumption(), routeA.getDistance(), airBus.getTransportType());
+        String calcResultForCar = calc.calculatePossibilityToFinishTrip(
+                volvoCar.getTankVolume(),
+                volvoCar.getFuelConsumption(),
+                routeA.getDistance(),
+                volvoCar.getTransportType());
+        String calcResultForAirbus = calc.calculatePossibilityToFinishTrip(
+                airBus.getTankVolume(),
+                airBus.getFuelConsumption(),
+                routeA.getDistance(),
+                airBus.getTransportType());
 
-        System.out.println("Trip from " + routeA.getDepartureCity() + " to " + routeA.getArrivalCity() + ". \n" + calcResultForCar);
-        System.out.println("Trip from " + routeA.getDepartureCity() + " to " + routeA.getArrivalCity() + ". \n" + calcResultForAirbus);
+        System.out.println("Trip from " + routeA.getDepartureCity() + " to " + routeA.getArrivalCity()
+                + ". \n" + calcResultForCar);
+        System.out.println("Trip from " + routeA.getDepartureCity() + " to " + routeA.getArrivalCity()
+                + ". \n" + calcResultForAirbus);
     }
 }
