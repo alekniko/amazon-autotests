@@ -31,7 +31,6 @@ public class BaseFunctions {
     }
 
     private final By DISMISS_BTN = By.xpath(".//input[@data-action-type='DISMISS']");
-    private final By AMAZON_LOGO = By.id(".//a[@id='nav-logo-sprites']");
 
     public void openUrl(String url) {
         if (!url.startsWith("http://") && !url.startsWith("https://")) {
