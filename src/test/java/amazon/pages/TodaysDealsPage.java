@@ -34,7 +34,7 @@ public class TodaysDealsPage {
     }
 
     public String getProductName(int productOrderNumber) {
-        return getProduct(productOrderNumber).getText();
+        return getProduct(productOrderNumber).getText().trim();
     }
 
     public void selectProductByName(String name) {

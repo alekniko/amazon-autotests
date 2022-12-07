@@ -11,9 +11,9 @@ public class DealPage {
         this.baseFunc = baseFunc;
     }
 
-    private final By HEADER = By.xpath(".//h1");
+    private final By HEADER = By.xpath(".//span[@id = 'productTitle']");
 
     public String getHeaderName () {
-        return baseFunc.getElement(HEADER).getText();
+        return baseFunc.getElement(HEADER).getText().trim();
     }
 }

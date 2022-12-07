@@ -18,7 +18,7 @@ public class AmazonWebPageTests {
     private SearchResultPage resultPage;
 
     private final String BEST_SELLERS_URL = "https://www.amazon.com/gp/bestsellers/";
-    private final String HOME_PAGE_URL = "amazon.com";
+    private final String HOME_PAGE_URL = "https://www.amazon.com/ref=nav_logo";
     private final int SELECTED_BOOK = 2;
     private final String ITEM_TO_FIND = "Kindle Paperwhite";
 
@@ -31,7 +31,6 @@ public class AmazonWebPageTests {
         todaysDealsPage = new TodaysDealsPage(baseFunc);
         dealPage = new DealPage(baseFunc);
         resultPage = new SearchResultPage(baseFunc);
-
     }
 
     @AfterEach
@@ -61,11 +60,13 @@ public class AmazonWebPageTests {
 
         homePage.selectFromMainMenu("Today's Deals");
         todaysDealsPage.selectOptionFromLeftMenu("Books");
-        String productNameInGrid = todaysDealsPage.getProductName(2);
-        System.out.println(productNameInGrid);
+        String productNameInGrid = todaysDealsPage.getProductName(5);
         todaysDealsPage.selectProductByName(productNameInGrid);
         String productNameInHeader = dealPage.getHeaderName();
-        Assertions.assertNotEquals(productNameInGrid, productNameInHeader, "Product name in grit is not the same");
+        System.out.println(productNameInGrid);
+        System.out.println(productNameInHeader);
+        Assertions.assertEquals(productNameInGrid,productNameInHeader,
+                "Product name in grit is not the same as product name in header");
     }
 
     @Test
